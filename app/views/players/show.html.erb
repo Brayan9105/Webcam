@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<div class="ml-4 mb-4">
+  <div class="row">
+    <div class="card" style="width: 18rem;">
+  <% if @player.picture.attached? && @player.has_picture? %>
+    <%= image_tag(@player.picture, class: "card-img-top") %>
+  <% else %>
+    No picture attached
+  <% end %>
+</div>
+</div>
+</div>
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
